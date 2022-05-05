@@ -19,7 +19,7 @@ Below you can find the [Sequence diagram](./agent-sequencediagram.md) followed b
 
 ## Enrollment app Sequence Diagram
 
-Below you can find the [Sequence diagram](./enrollment-sequencediagram.md followed by the Enrollment app.
+Below you can find the [Sequence diagram](./enrollment-sequencediagram.md) followed by the Enrollment app.
 
 ![image](https://user-images.githubusercontent.com/45007019/166897600-f7d11826-1710-4781-9448-796e25f5646a.png)
 
