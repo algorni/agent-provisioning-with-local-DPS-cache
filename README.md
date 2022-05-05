@@ -15,4 +15,11 @@ As fallback you can use also [AAD Device Code flow](https://docs.microsoft.com/a
 
 Below you can find the [Sequence diagram](./agent-sequencediagram.md) followed by the Agent app.
 
-![image](https://user-images.githubusercontent.com/45007019/166891392-5014af9c-2506-43d6-9ca5-85d32d80d9f1.png)
+![image](https://user-images.githubusercontent.com/45007019/166897728-eb0e2e65-56cd-40b3-8346-e40d311d1459.png)
+
+## Enrollment app Sequence Diagram
+
+Below you can find the [Sequence diagram](./enrollment-sequencediagram.md) followed by the Enrollment app.
+
+![image](https://user-images.githubusercontent.com/45007019/166897600-f7d11826-1710-4781-9448-796e25f5646a.png)
+
