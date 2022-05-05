@@ -13,6 +13,6 @@ As fallback you can use also [AAD Device Code flow](https://docs.microsoft.com/a
 
 ## Agent app Sequence Diagram
 
-Below you can find the Sequence diagram followed by the Agent app.
+Below you can find the [Sequence diagram](./agent-sequencediagram.md) followed by the Agent app.
 
 ![image](https://user-images.githubusercontent.com/45007019/166891392-5014af9c-2506-43d6-9ca5-85d32d80d9f1.png)
