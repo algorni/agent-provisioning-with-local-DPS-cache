@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DeviceClientTPM": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ProvisioningDetailsDataDirectory": "c:\\\\tmp\\TPM"
+      }
+    }
+  }
+}
