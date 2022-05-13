@@ -23,3 +23,9 @@ Below you can find the [Sequence diagram](./enrollment-sequencediagram.md) follo
 
 ![image](https://user-images.githubusercontent.com/45007019/166897600-f7d11826-1710-4781-9448-796e25f5646a.png)
 
+
+The Enrollment App now uses Device Code Flow to authenticate to DPS.
+A QR Code with the link to the Authentication page will be shown in the Console together with the User Code:
+
+<img width="883" alt="image" src="https://user-images.githubusercontent.com/45007019/168384168-6d991a20-697d-415e-8996-4d3128a5a3ef.png">
+
