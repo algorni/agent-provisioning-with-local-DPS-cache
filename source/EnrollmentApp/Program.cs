@@ -5,10 +5,11 @@ using Azure.Identity;
 using Microsoft.Azure.Devices.Provisioning.Security;
 using Microsoft.Azure.Devices.Provisioning.Service;
 using Microsoft.Extensions.Configuration;
+using QRCoder;
 
 Console.WriteLine("Hello, IoT World!");
 
-Console.WriteLine("Sample code to leverage TPM chipset to Enroll an agent into DPS");
+Console.WriteLine("\nSample code to leverage TPM chipset to Enroll an agent into DPS");
 
 IConfiguration configuration = new ConfigurationBuilder()  
   .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -27,22 +28,29 @@ using var security = new SecurityProviderTpmHsm(null);
 var endorsmentKey = security.GetEndorsementKey();
 var base64EndorsmentKey = Convert.ToBase64String(endorsmentKey);
 
-Console.WriteLine($"Your EK is {base64EndorsmentKey}");
+Console.WriteLine($"\nYour EK is {base64EndorsmentKey}\n");
 
 ProvisioningStatus provisioningStatus = ProvisioningStatus.Enabled;
 
 
 //https://docs.microsoft.com/en-us/azure/iot-dps/concepts-control-access-dps-azure-ad
 
+TokenCredential tokenCredential = null;
+
 // DefaultAzureCredential supports different authentication mechanisms and determines the appropriate credential type based of the environment it is executing in.
 // It attempts to use multiple credential types in an order until it finds a working credential.
 // For more info see https://docs.microsoft.com/en-us/dotnet/api/azure.identity?view=azure-dotnet.
-TokenCredential tokenCredential = new DefaultAzureCredential();
 
-//authentication can be done also with
-//https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-device-code
-//https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-desktop-acquire-token-device-code-flow?tabs=dotnet
-//https://github.com/azure-samples/active-directory-dotnetcore-devicecodeflow-v2
+//tokenCredential =  = new DefaultAzureCredential();
+
+//DeviceCodeCredential leverage teh Code Flow authnetication, in this case the user need to use another device browser to authenticate 
+
+tokenCredential = new DeviceCodeCredential(new DeviceCodeCredentialOptions() 
+    { 
+        DeviceCodeCallback = deviceCodeCallback 
+        //add the application ID for better customization
+    });
+
 
 //now connecting to the DPS and create the indivisual enrollment
 using (ProvisioningServiceClient provisioningServiceClient =
@@ -63,4 +71,22 @@ using (ProvisioningServiceClient provisioningServiceClient =
 
     Console.WriteLine("\nIndividualEnrollment created with success.");
     Console.WriteLine(individualEnrollmentResult);
+}
+
+
+static async Task deviceCodeCallback(DeviceCodeInfo deviceCodeInfo, CancellationToken cancellationToken)
+{
+    string qrCodeText = deviceCodeInfo.VerificationUri.ToString();
+
+    QRCodeGenerator qrGenerator = new QRCodeGenerator();
+
+    PayloadGenerator.Url url = new PayloadGenerator.Url(qrCodeText);
+
+    QRCodeData qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
+    AsciiQRCode qrCode = new AsciiQRCode(qrCodeData);
+    string qrCodeAsAsciiArt = qrCode.GetGraphic(1);
+
+    Console.WriteLine($"\n\nPlease use your phone to scan the following QR Code and enter the following code: {deviceCodeInfo.UserCode} then login with your AAD credential to allow access to DPS\n\n");
+
+    Console.WriteLine(qrCodeAsAsciiArt);      
 }

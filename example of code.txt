@@ -1,0 +1,1 @@
+https://github1s.com/Azure-Samples/active-directory-dotnetcore-devicecodeflow-v2/blob/master/device-code-flow-console/Program.cs

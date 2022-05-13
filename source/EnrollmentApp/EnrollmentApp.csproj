@@ -9,20 +9,21 @@
 <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.6.0" />
     
-	<PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.40.0" />
+	<PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.41.0" />
     <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Client" Version="1.19.1" />
     <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Security.Tpm" Version="1.14.1" />
     
 	<PackageReference Include="Microsoft.Azure.Devices.Provisioning.Service" Version="1.19.1-preview-001" />
 
     <!-- Note: Applications should not need to import all 3 protocols. This was done to simplify protocol selection within the sample.-->
-    <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Transport.Amqp" Version="1.16.1" />
+    <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Transport.Amqp" Version="1.16.2" />
     <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Transport.Http" Version="1.15.1" />
 
 	<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
 	<PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="6.0.0" />
 	<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.1" />
 	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+	<PackageReference Include="QRCoder" Version="1.4.3" />
 </ItemGroup>
 <ItemGroup>
   <None Update="appsettings.json">
