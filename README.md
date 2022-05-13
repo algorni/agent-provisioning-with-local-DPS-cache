@@ -8,8 +8,12 @@ In this repo you can also find a sample application to manage the initial regist
 
 You will find a simple example of Custom Allocation Policy function.
 
-Both the Registration app and the Reprovisioning Command App is using AAD to authenticate toward the DPS and IoT Hyb service endpoint.
-As fallback you can use also [AAD Device Code flow](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-device-code). 
+The Registration App is using [Device Code flow](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-device-code) to authenticate toward the DPS service endpoint.
+
+The App shows a QR Code with the link to the Authentication page will be shown in the Console together with the User Code:
+
+<img width="883" alt="image" src="https://user-images.githubusercontent.com/45007019/168384168-6d991a20-697d-415e-8996-4d3128a5a3ef.png">
+
 
 ## Agent app Sequence Diagram
 
@@ -24,8 +28,6 @@ Below you can find the [Sequence diagram](./enrollment-sequencediagram.md) follo
 ![image](https://user-images.githubusercontent.com/45007019/166897600-f7d11826-1710-4781-9448-796e25f5646a.png)
 
 
-The Enrollment App now uses Device Code Flow to authenticate to DPS.
-A QR Code with the link to the Authentication page will be shown in the Console together with the User Code:
 
-<img width="883" alt="image" src="https://user-images.githubusercontent.com/45007019/168384168-6d991a20-697d-415e-8996-4d3128a5a3ef.png">
+
 
