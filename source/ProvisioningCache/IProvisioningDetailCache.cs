@@ -2,8 +2,10 @@
 {
     public interface IProvisioningDetailCache
     {
-        ProvisioningResponse GetProvisioningDetailResponseFromCache(string registrationId);
+        Task<ProvisioningResponse> GetProvisioningDetailResponseFromCache(string registrationId);
 
-        void SetProvisioningDetailResponse(string registrationId, ProvisioningResponse provisioningDetails);
+        Task SetProvisioningDetailResponse(string registrationId, ProvisioningResponse provisioningDetails);
+
+        Task ClearProvisioningDetail(string registrationId);
     }
 }

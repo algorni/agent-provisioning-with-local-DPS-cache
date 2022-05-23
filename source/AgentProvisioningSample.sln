@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgentApp", "AgentApp\AgentA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnrollmentApp", "EnrollmentApp\EnrollmentApp.csproj", "{574EEDA4-872C-4724-B531-84B168783214}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReprovisioningApp", "ReprovisioningApp\ReprovisioningApp.csproj", "{45B77881-7FD6-415C-BC2F-55B351EFB16A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agent.Common", "Agent.Common\Agent.Common.csproj", "{312E2D1F-E81D-4F5A-B6D6-BDEA5BBEE157}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{574EEDA4-872C-4724-B531-84B168783214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{574EEDA4-872C-4724-B531-84B168783214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{574EEDA4-872C-4724-B531-84B168783214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B77881-7FD6-415C-BC2F-55B351EFB16A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B77881-7FD6-415C-BC2F-55B351EFB16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B77881-7FD6-415C-BC2F-55B351EFB16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B77881-7FD6-415C-BC2F-55B351EFB16A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312E2D1F-E81D-4F5A-B6D6-BDEA5BBEE157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312E2D1F-E81D-4F5A-B6D6-BDEA5BBEE157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312E2D1F-E81D-4F5A-B6D6-BDEA5BBEE157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312E2D1F-E81D-4F5A-B6D6-BDEA5BBEE157}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
